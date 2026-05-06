@@ -30,7 +30,7 @@ body {
 .hero {
     /* Camada escura (rgba 0,0,0,0.4) para destacar o texto branco sobre a imagem */
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                url('./img/painel-maravilha.jpg') no-repeat center center;
+                url('painel-maravilha.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed; /* Efeito Parallax elegante */
     color: var(--branco);
