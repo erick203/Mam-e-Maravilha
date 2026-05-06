@@ -1,6 +1,14 @@
+// Função para tocar a música e criar o efeito visual
 function criarCoracao(event) {
+    const audio = document.getElementById('musica');
+    
+    // Tenta dar o play assim que houver o primeiro clique[cite: 2]
+    if (audio && audio.paused) {
+        audio.play().catch(e => console.log("Aguardando interação para tocar áudio"));
+    }
+
+    // Código das estrelas que você já possui[cite: 2]
     const estrela = document.createElement("div");
-    // Usando estrela em vez de coração
     estrela.innerHTML = "⭐"; 
     estrela.className = "estrela-clique";
     estrela.style.left = event.clientX + "px";
@@ -8,14 +16,9 @@ function criarCoracao(event) {
     document.body.appendChild(estrela);
     
     setTimeout(() => { estrela.remove(); }, 1000);
-    
-    const audio = document.getElementById('musica');
-    if (audio.paused) {
-        audio.play();
-    }
 }
 
-// O restante do código de animação dos cards permanece igual
+// O restante do seu código de animação dos cards[cite: 2]
 const cards = document.querySelectorAll('.card-aluno');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
